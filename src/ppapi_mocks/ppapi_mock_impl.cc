@@ -4,6 +4,8 @@
 
 #include "ppapi_mocks/ppapi_mock_impl.h"
 
+#include <utility>
+
 #include "base/memory/singleton.h"
 
 namespace ppapi_mock {

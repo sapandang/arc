@@ -7,6 +7,7 @@
 #include "posix_translation/file_stream.h"
 
 #include <algorithm>
+#include <utility>
 
 #include "base/memory/scoped_ptr.h"
 #include "common/alog.h"

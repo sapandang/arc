@@ -7,7 +7,6 @@
 """Suggest owners using owners.py functionality."""
 
 import argparse
-import glob
 import os
 import subprocess
 import sys
@@ -17,7 +16,7 @@ from src.build.util import git
 
 
 def get_owners_db():
-  return owners.Database(os.getcwd(), open, os.path, glob.glob)
+  return owners.Database(os.getcwd(), open, os.path)
 
 
 def _get_reviewer_set_for_commit(db, commit):

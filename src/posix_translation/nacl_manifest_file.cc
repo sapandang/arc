@@ -8,6 +8,7 @@
 
 #include <string.h>
 
+#include <utility>
 #include <vector>
 
 #include "base/strings/string_piece.h"

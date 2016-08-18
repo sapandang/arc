@@ -6,6 +6,8 @@
 
 #include <errno.h>
 
+#include <utility>
+
 namespace posix_translation {
 
 // The lifetime of the stream must implicitly be managed elsewhere.  We assume
