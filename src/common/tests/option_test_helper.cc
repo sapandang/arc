@@ -17,6 +17,7 @@ void PopulateOptionsForTest() {
   options->Put("enable_synthesize_touch_events_on_click", "false");
   options->Put("enable_synthesize_touch_events_on_wheel", "false");
   options->Put("package_name", "a.package.name");
+  options->Put("pause_on_blur", "false");
   options->Put("resize", "disabled");
   options->Put("save_logs_to_file", "false");
   // instance_->DidChangeFocus() will post work to the utility thread if track

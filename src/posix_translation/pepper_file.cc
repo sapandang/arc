@@ -37,6 +37,8 @@ namespace posix_translation {
 
 namespace {
 
+const char kDatabasePath[] = "/data/data/org.chromium.arc/files/db";
+
 const size_t kMaxFSCacheEntries = 1024;
 const blksize_t kBlockSize = 4096;
 
@@ -338,6 +340,11 @@ std::string PepperFileHandler::SetPepperFileSystem(
 }
 
 bool PepperFileHandler::IsWorldWritable(const std::string& pathname) {
+  // This is the location of the shared Content Provider database files, which
+  // is created/owned by kFirstAppUid.  In order for other contexts to be able
+  // to open this to create individual database files, make it world writable.
+  if (pathname.compare(0, strlen(kDatabasePath), kDatabasePath) == 0)
+    return true;
   // Calling this->stat() every time when VFS::GetFileSystemHandlerLocked() is
   // invoked is too expensive for this handler (and this handler's stat() does
   // not fill the permission part of st_mode anyway). Just returning false

@@ -163,6 +163,12 @@
     "childPlugin": true
   },
   {
+    "name": "pauseOnBlur",
+    "defaultValue": false,
+    "help": "Pause the current activity when focus is lost.",
+    "plugin": true
+  },
+  {
     "name": "resize",
     "defaultValue": "disabled",
     "allowedValues": ["disabled", "reconfigure", "scale"],
