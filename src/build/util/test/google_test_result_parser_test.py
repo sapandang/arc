@@ -81,7 +81,7 @@ class JavaScriptTestResultParser(unittest.TestCase):
     callback = MockCallback()
     parser = result_parser.JavaScriptTestResultParser(callback)
     parser.process_line(
-        '[13748:13748:1202/184723:INFO:CONSOLE(136)] '
+        '[13748:13748:1202/184723.926074:INFO:CONSOLE(136)] '
         '"INFO: [ RUN      ] BackgroundPageTest.SendCrashReportsFromRelease", '
         'source: chrome-extension://dummy_hash_code/chrome_test.js (136)')
     self.assertEqual(

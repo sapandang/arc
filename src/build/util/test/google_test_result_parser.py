@@ -92,8 +92,13 @@ class GoogleTestResultParser(object):
 class JavaScriptTestResultParser(GoogleTestResultParser):
   """Parser for the output of JavaScript test cases."""
 
+  # Pattern to find INFO lines from JavaScript embedded in Chrome logs. This
+  # pattern optionally supports microsecond-resolution timestamps introduced in
+  # https://codereview.chromium.org/2528613002.
+  _INFO_PATTERN = r'\[\d+:\d+:\d+/\d+(\.\d+)?:INFO:CONSOLE\(\d+\)\] \"INFO: '
+
   def __init__(self, callback):
     super(JavaScriptTestResultParser, self).__init__(
         callback,
-        prefix_pattern=r'\[\d+:\d+:\d+/\d+:INFO:CONSOLE\(\d+\)\] \"INFO: ',
+        prefix_pattern=JavaScriptTestResultParser._INFO_PATTERN,
         suffix_pattern=r'"')
